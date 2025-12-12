@@ -1,0 +1,227 @@
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  height: 100vh;
+}
+
+.chat-window {
+  width: 100%;
+  max-width: 400px;
+  height: 80vh;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/*=============MESSAGES AREA============*/
+
+.chat-messages {
+    flex: 1;
+    padding: 16px;
+    background-color: yellow;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.messages {
+    display: flex;
+    flex: 1;
+    padding: 16px;
+    overflow-y: auto;
+    background-color: red;
+    gap: 8px;
+    justify-content: flex-start;
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none; 
+}
+
+.messages::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari, Edge */
+}
+
+/*=============INPUT AREA============*/
+
+.input-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.text-input {
+  flex: 1;
+  padding: 8px;
+  background-color: rgb(236, 91, 217);
+  border-radius: 6px;
+  border: 2px solid #000000;
+  font-size: 1em;
+  color: black;
+}
+
+.text-input:focus,
+.text-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/*=============FILES MANAGER============*/
+.file-manager{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    /* padding: 8px; */
+}
+
+/*=============COMMAND BAR============*/
+
+.command-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    background-color: blue;
+    padding: 12px;
+}
+
+/*=============BUTTONS SPECIFIC============*/
+
+.upload-btn {
+  background: #00ff2f;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.send-button {
+  background: #00ff2f;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.folder-button {
+  background: #00ff2f;
+  color: white;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+/*=============BUTTONS GENERAL============*/
+
+.mybutton {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+}
+
+
+.mybutton:active {
+  transform: scale(0.96);
+}
+
+/*=============MESSAGES============*/
+
+.user-msg, .ai-msg {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.user-msg {
+  align-self: flex-end;
+  background-color: #DCF8C6;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+}
+
+.ai-msg {
+  align-self: flex-start;
+  background-color: #E5E5EA;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 70%;
+}
+
+/*=============MEDIA QUERY============*/
+
+@media (max-width: 500px) {
+  .chat-window {
+    height: 90vh;
+  }
+  .text-input {
+    font-size: 0.9em;
+  }
+  .upload-btn, .send-button, .mybutton {
+    height: 40px;
+    min-width: 40px;
+  }
+}
+
+/*==========FILE PANEL================*/
+
+/* pannello file a destra */
+.file-panel {
+  width: 320px;                /* modifica come vuoi */
+  background: #fff;
+  border-left: 1px solid #e6e6e6;
+  box-shadow: -6px 0 18px rgba(0,0,0,0.04);
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  overflow: auto;
+}
+
+.file-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.file-panel-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.file-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.file-item:hover {
+  background: rgba(0,0,0,0.03);
+}
+
+.file-icon { font-size: 1.1rem; }
+
+.no-files { color: #666; font-size: 0.95rem; }
+
+.close-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
