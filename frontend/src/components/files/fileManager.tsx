@@ -1,3 +1,5 @@
+import "../../custom-css/fileManager.css";
+
 import folderIcon from "../../assets/svg_folder_icon.svg";
 import UploadFiles from "./uploadFiles";
 
@@ -10,7 +12,7 @@ export default function FileManager({
     }) {
     return (
         <div className="file-manager">
-            <button className="mybutton folder-button" onClick={() => onOpenPanel()}>
+            <button className="ui-btn" onClick={onOpenPanel}>
                 <img src={folderIcon} className="w-6 h-6" />
             </button>
 

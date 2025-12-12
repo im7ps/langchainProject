@@ -1,0 +1,12 @@
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+    min-height: 0;
+    padding: 10px;
+    background-color: var(--chat-bg);
+}

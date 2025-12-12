@@ -1,0 +1,14 @@
+.chat-window {
+  width: 100%;
+  max-width: 400px;   /* già presente ma ribadito */
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  flex-shrink: 0;      /* impedisce di allargarsi */
+  background-color: var(--chat-bg);
+}
+
+.chat-window * {
+  max-width: 100%;     /* impedisce overflow orizzontale */
+}

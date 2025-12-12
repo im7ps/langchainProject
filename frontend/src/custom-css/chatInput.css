@@ -1,0 +1,18 @@
+.input-area {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    flex-direction: row;
+
+    min-width: 0; 
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.input-area .ui-btn {
+    flex: 0 0 auto;       /* NON si riduce */
+    width: 48px;          /* dimensione coerente con design system */
+    height: 48px;
+}

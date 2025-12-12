@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"; //
 
+import "../custom-css/chat.css";
+
 import ChatMessages from "../components/chat/chatMessages.tsx";
 import ChatInput from "../components/chat/chatInput.tsx";
 import type { Message } from "../types/message.ts";
@@ -138,14 +140,15 @@ export default function Chat() {
 
   return (
     <div className="app-container">
-      <div className="chat-window">
+      <div className="ui-surface chat-window">
         <ChatMessages messages={messages} />
-        <div className="command-bar">
+
+        <div className="ui-bar">
           <ChatInput onSend={handleSend} />
           <FileManager onUpload={handleUpload} onOpenPanel={() => setFilePanelOpen(true)} />
         </div>
       </div>
-  
+
       <FilePanel
         open={filePanelOpen}
         files={uploadedFiles}

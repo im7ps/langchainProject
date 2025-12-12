@@ -1,0 +1,20 @@
+.hidden-input {
+    display: none;
+}
+
+.file-manager {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0; 
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.file-manager .ui-btn {
+    flex: 0 0 auto;       /* NON si riduce */
+    width: 48px;          /* dimensione coerente con design system */
+    height: 48px;
+}

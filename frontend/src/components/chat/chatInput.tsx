@@ -1,5 +1,6 @@
 import { useState } from "react";
 import sendIcon from "../../assets/svg_chat_icon.svg";
+import "../../custom-css/chatInput.css";
 
 
 export default function ChatInput( { onSend }: { onSend: (text: string) => void } ) {
@@ -16,13 +17,13 @@ export default function ChatInput( { onSend }: { onSend: (text: string) => void 
             <input
                 type="text"
                 placeholder="Scrivi un messaggio..."
-                className="text-input"
+                className="ui-input"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && send()}
             />
 
-            <button className="mybutton send-button" onClick={send}>
+            <button className="ui-btn" onClick={send}>
                 <img src={sendIcon} className="w-6 h-6" />
             </button>
         </div>
