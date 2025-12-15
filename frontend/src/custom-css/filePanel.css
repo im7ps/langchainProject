@@ -1,0 +1,75 @@
+.ui-sidepanel {
+  position: absolute;
+  top: 0;
+  left: 100%;
+
+  width: 320px;
+  height: 100%;
+
+  background: var(--surface-1);
+  border-left: var(--border);
+  box-shadow: var(--shadow-panel);
+
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+
+  border-radius: var(--radius-md);
+}
+
+.ui-sidepanel__header h3 {
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 2;
+}
+
+.ui-sidepanel__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: clamp(54px, 6vh, 64px);
+  margin: 0;
+  padding: 0.5em 1em;
+
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  color: var(--text-primary);
+  border-bottom: var(--border);
+
+  background-color: var(--accent-primary);
+}
+
+.ui-btn.ui-btn--danger.close-sidepanel {
+  border: none;
+  background-color: #ff4c4c00;
+}
+
+.ui-sidepanel__item {
+  display: flex;
+  align-items: center;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.ui-sidepanel__item:hover {
+  background: var(--surface-2);
+}
+
+.file-name {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: var(--space-3);
+  background-color: var(--accent-input);
+
+  font-family: 'League Spartan', Courier, monospace;
+}

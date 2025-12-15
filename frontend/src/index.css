@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;600;700&display=swap");
+
 :root {
   /* Font */
   font-family: system-ui, Helvetica, Arial, sans-serif;
@@ -14,7 +18,7 @@
   --surface-3: #e6e6e6;    /* superfici terziarie */
   --surface-4: #e40f0f;    /* superfici quaternarie */  
 
-  --accent-primary: #00FF2F;   /* pulsanti */
+  --accent-primary: #0fe737;   /* pulsanti */
   --accent-secondary: #007bff; /* barre comandi, icon buttons */
   --accent-input: #EC5BD9;
 
@@ -42,7 +46,6 @@
   --shadow-card: 0 2px 8px rgba(0,0,0,0.12);
 }
 
-/* RESET */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -146,31 +149,4 @@ body {
 .ui-msg--ai {
   align-self: flex-start;
   background: var(--msg-ai);
-}
-
-.ui-sidepanel {
-  width: 320px;
-  background: var(--surface-1);
-  border-left: var(--border);
-  box-shadow: var(--shadow-panel);
-  display: flex;
-  flex-direction: column;
-  padding: var(--space-3);
-}
-
-.ui-sidepanel__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: var(--space-2);
-  border-bottom: var(--border);
-}
-
-.ui-sidepanel__item {
-  padding: var(--space-2);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-}
-.ui-sidepanel__item:hover {
-  background: var(--surface-2);
 }

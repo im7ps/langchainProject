@@ -1,10 +1,13 @@
 .app-container {
-    height: 100vh;
-    width: auto;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  position: relative;
+}
 
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+.chat-wrapper {
+  position: relative;
+  display: inline-flex;
 }

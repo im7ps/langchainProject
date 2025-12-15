@@ -1,13 +1,15 @@
+import "../../custom-css/filePanel.css";
+
 export default function FilePanel({
     open,
     files,
-    onClose,
     onClickFile,
+    onDeleteFile,
 } : {
     open: boolean,
     files: { name: string, url?: string}[],
-    onClose: () => void,
     onClickFile: (filename: string) => void,
+    onDeleteFile: (filename: string) => void,
 }) {
     if (!open) return null;
 
@@ -15,7 +17,6 @@ export default function FilePanel({
         <aside className="ui-sidepanel">
             <div className="ui-sidepanel__header">
                 <h3>File caricati</h3>
-                <button onClick={onClose} className="ui-btn ui-btn--ghost">✕</button>
             </div>
 
             <div className="file-panel-body ui-scroll">
@@ -31,6 +32,15 @@ export default function FilePanel({
                 >
                     <span className="file-icon">📄</span>
                     <span className="file-name">{f.name}</span>
+                    <button
+                      className="ui-btn ui-btn--danger delete-file-btn"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        onDeleteFile(f.name);
+                      }}
+                    >
+                      ✕
+                    </button>
                 </div>
                 ))}
             </div>
