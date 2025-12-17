@@ -4,12 +4,26 @@ services:
   backend:
     build: ./backend
     container_name: backend
+    depends_on:
+      - postgres
     ports:
       - "8000:8000"
     env_file:
       - .env
     volumes:
       - ./backend/uploads:/app/uploads
+    
+  postgres:
+    image: postgres:16
+    container_name: postgres
+    environment:
+      POSTGRES_USER: langchain
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: langchain_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
 
   frontend:
     build: ./frontend
@@ -20,3 +34,7 @@ services:
       - backend
     environment:
       - VITE_BACKEND_URL=http://host.docker.internal:8000 #- VITE_BACKEND_URL=http://backend:8000 PROD
+
+volumes:
+  postgres_data:
+
