@@ -1,5 +1,7 @@
+import { backendUrl } from "../types/backendURL";
+
 export const handleUploadMessage = async (text: string) => {
-    const res = await fetch("http://localhost:8000/chat", {
+    const res = await fetch(`${backendUrl}/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -11,7 +13,7 @@ export const handleUploadMessage = async (text: string) => {
 }
 
 export const handleUploadFileMessage = async (filename: string, filecontent: string) => {
-    const res = await fetch("http://localhost:8000/chat", {
+    const res = await fetch(`${backendUrl}/chat`, {
     method: "POST",
     headers: {
         "Content-Type": "application/json",

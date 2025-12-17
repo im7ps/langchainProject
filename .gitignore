@@ -1,25 +1,56 @@
-# Ignora le cartelle e i file generati da Python
+# =========================
+# Backend / Python
+# =========================
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# NASCONDI LE CHIAVI SEGRETE
-.env
-
-# Ignora le cartelle e i file generati dal backend
-backend/__pycache__/
-backend/venv/
+# Backend uploads / file temporanei
 backend/uploads/
 
-# Ignora i moduli node.js
+# Env file con segreti
+.env
+
+# Log e database temporanei
+*.log
+*.sqlite3
+*.db
+
+# =========================
+# Frontend / Node.js
+# =========================
 frontend/node_modules/
+frontend/dist/
+frontend/.vite/
 
-
-frontend/tsconfig.app.json
-frontend/tsconfig.json
-frontend/tsconfig.node.json
-frontend/vite.config.ts
-
+# Lock files e log
 frontend/package-lock.json
-frontend/package.json
-frontend/eslint.config.js
-frontend/README.md
+frontend/yarn.lock
+frontend/npm-debug.log
+
+# =========================
+# Docker
+# =========================
+*.dockerignore
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# Volumi o dati temporanei generati dai container
+**/tmp/
+**/logs/
+**/data/
+
+# =========================
+# Editor / OS
+# =========================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# =========================
+# Backup / Misc
+# =========================
+*~
+*.bak
