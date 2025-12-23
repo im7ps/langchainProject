@@ -5,3 +5,12 @@ google-genai
 python-multipart
 sqlalchemy
 psycopg2-binary
+langchain
+langchain-community
+langchain-text-splitters
+langchain-google-genai
+pypdf
+langchain-chroma
+chromadb
+sentence-transformers
+torch

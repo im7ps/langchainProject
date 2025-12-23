@@ -10,7 +10,8 @@ import FilePanel from "../components/files/FilePanel.tsx";
 import type { UploadedFile } from "../types/uploadedFile.ts";
 
 import { fileService } from "../services/fileService.ts";
-import { handleUploadMessage, handleUploadFileMessage } from "../services/chatService.ts";
+import { handleUploadMessage } from "../services/chatService.ts";
+// import { backendUrl } from "../types/backendURL";
 
 
 export default function Chat() {
@@ -61,17 +62,24 @@ export default function Chat() {
 
   const uploadChatFile = async (name: string) => {
     try {
-      const data = await fileService.fetchFile(name)
-      addSystemMessage(`File ${data.filename} caricato nel chat`);
+      const response = await fetch("http://localhost:8000/documents/ingest", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ filename: name }),
+      });
 
-      const aiResponse = await handleUploadFileMessage(data.filename, data.content);
-      addSystemMessage(`Risposta AI: ${aiResponse.reply}`);
-      return data;
+      if (!response.ok) {
+        throw new Error("File ingest failed");
+      }
+
+      addSystemMessage(`File ${name} caricato correttamente nel chat`);
     }
     catch (error) {
-      console.error("Error fetching file:", error);
+      console.error("Error uploading file to chat:", error);
       addSystemMessage(`Errore nel caricamento del file ${name}`);
-      };
+    }
   }
   
   const deleteFile = async (name:string) => {

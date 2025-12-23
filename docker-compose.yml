@@ -12,6 +12,7 @@ services:
       - .env
     volumes:
       - ./backend/uploads:/app/uploads
+      - ./backend/data/chroma:/app/data/chroma
     
   postgres:
     image: postgres:16
@@ -33,7 +34,7 @@ services:
     depends_on:
       - backend
     environment:
-      - VITE_BACKEND_URL=http://host.docker.internal:8000 #- VITE_BACKEND_URL=http://backend:8000 PROD
+      - VITE_BACKEND_URL=http://backend:8000 #- VITE_BACKEND_URL=http://host.docker.internal:8000 / VITE_BACKEND_URL=http://backend:8000 PROD
 
 volumes:
   postgres_data:

@@ -34,7 +34,7 @@ const handleUploadFile = async (file: File) => {
 }
 
 const fetchFile = async (name: string) => {
-    const response = await fetch(`${backendUrl}/files/${name}`);
+    const response = await fetch(`http://localhost:8000/files/${name}`);
     if (!response.ok) {
         throw new Error("File fetch failed");
     }
@@ -43,7 +43,7 @@ const fetchFile = async (name: string) => {
 }
 
 const deleteFile = async (name: string) => {
-  const res = await fetch(`${backendUrl}/files/${name}`,
+  const res = await fetch(`http://localhost:8000/files/${name}`,
     { method: "DELETE" }
   );
   if (!res.ok) throw new Error("File delete failed");
