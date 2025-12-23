@@ -2,9 +2,9 @@
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from pydantic import BaseModel
 from pathlib import Path
-from app.langchain.ingest import ingest_document
+from app.my_langchain.ingest import ingest_document
 from app.core.config import settings
-import shutil
+# import shutil
 
 class IngestRequest(BaseModel):
     filename: str

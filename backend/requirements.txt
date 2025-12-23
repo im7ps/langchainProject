@@ -14,3 +14,4 @@ langchain-chroma
 chromadb
 sentence-transformers
 torch
+langchain-huggingface

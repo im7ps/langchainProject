@@ -13,7 +13,18 @@ services:
     volumes:
       - ./backend/uploads:/app/uploads
       - ./backend/data/chroma:/app/data/chroma
-    
+    develop:
+      watch:
+        - action: sync
+          path: ./backend
+          target: /app
+          ignore:
+            - ./backend/__pycache__/
+            - ./backend/app/__pycache__/
+            - ./backend/data/
+            - ./backend/uploads/
+        - action: rebuild
+          path: ./backend/requirements.txt
   postgres:
     image: postgres:16
     container_name: postgres
